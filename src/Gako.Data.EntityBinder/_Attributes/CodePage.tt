@@ -1,0 +1,32 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Net" #>
+<#@ import namespace="System.Text" #>
+<#@ output extension=".cs" #>
+
+namespace Gako.Data.EntityBinder
+{
+    <#
+        string CreateMember(EncodingInfo enc)
+        {
+            return string.Format("CP{0}_{1} = {0},", enc.CodePage, enc.Name.Replace('-', '_'));
+        }
+    #>
+
+    /// <summary>
+    /// 文字エンコーディングのコードページ ID を表します。
+    /// </summary>
+    public enum CodePage
+    {
+        <# foreach (var enc in Encoding.GetEncodings()) { #>
+
+            /// <summary>
+            /// <#= WebUtility.HtmlDecode(enc.DisplayName) #>
+            /// </summary>
+            <#= CreateMember(enc) #>
+        <# } #>
+    }
+}

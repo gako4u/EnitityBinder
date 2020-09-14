@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit.3.12.0\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AE32A281-417D-40AB-BA2A-2EF00835C315}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gako.Data.EntityBinder.Test</RootNamespace>
+    <AssemblyName>Gako.Data.EntityBinder.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.4.0.0.4000\lib\net40\Iesi.Collections.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.4.0.0.4000\lib\net40\NHibernate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="Program_Main.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stopwatch.cs" />
+    <Compile Include="Test\Enums\EnumUInt64.cs" />
+    <Compile Include="Test\Enums\EnumSInt08.cs" />
+    <Compile Include="Test\Enums\EnumSInt16.cs" />
+    <Compile Include="Test\Enums\EnumSInt32.cs" />
+    <Compile Include="Test\Enums\EnumSInt64.cs" />
+    <Compile Include="Test\Enums\EnumUInt08.cs" />
+    <Compile Include="Test\Enums\EnumUInt16.cs" />
+    <Compile Include="Test\Enums\EnumUInt32.cs" />
+    <Compile Include="Test\Expected.cs" />
+    <Compile Include="Test\SysConvert.cs" />
+    <Compile Include="Test\TestCases\Attribute\Tester_DecodeAttribute.cs" />
+    <Compile Include="Test\TestCases\Attribute\Tester_FormatAttribute.cs" />
+    <Compile Include="Test\TestCases\Tester_From_UInt08Array_To_Enum.cs" />
+    <Compile Include="Test\TestCases\Tester_From_UInt08Array_To_Standard.cs" />
+    <Compile Include="Test\TestCases\Tester_From_TimeSpan_To_Standard.cs" />
+    <Compile Include="Test\TestCases\Tester_From_SInt64_To_Standard.cs" />
+    <Compile Include="Test\TestCases\Tester_From_SInt32_To_Standard.cs" />
+    <Compile Include="Test\TestCases\Tester_From_SInt16_To_Standard.cs" />
+    <Compile Include="Test\TestCases\Tester_From_Single_To_Standard.cs" />
+    <Compile Include="Test\TestCases\Tester_From_Double_To_Standard.cs" />
+    <Compile Include="Test\TestCases\Tester_From_String_To_Standard.cs" />
+    <Compile Include="Test\TestCases\Tester_From_TimeSpan_To_Enum.cs" />
+    <Compile Include="Test\TestCases\Tester_From_DateTime_To_Enum.cs" />
+    <Compile Include="Test\TestCases\Tester_From_DateTime_To_Standard.cs" />
+    <Compile Include="Test\TestCases\Tester_From_String_To_Enum.cs" />
+    <Compile Include="Test\TestCases\Tester_From_SInt64_To_Enum.cs" />
+    <Compile Include="Test\TestCases\Tester_From_SInt32_To_Enum.cs" />
+    <Compile Include="Test\TestCases\Tester_From_SInt16_To_Enum.cs" />
+    <Compile Include="Test\TestCases\Tester_From_Single_To_Enum.cs" />
+    <Compile Include="Test\TestCases\Tester_From_Double_To_Enum.cs" />
+    <Compile Include="Test\TestCases\Tester_From_Decimal_To_Enum.cs" />
+    <Compile Include="Test\TestCases\Tester_From_Decimal_To_Standard.cs" />
+    <Compile Include="Test\Tester.cs" />
+    <Compile Include="Test\Utility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="App.DotNet4.5.2.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gako.Data.EntityBinder.NHibernateUtilities\DotNet4.5.2_Gako.Data.EntityBinder.NHibernateUtilities.csproj">
+      <Project>{442c6429-0ce4-4525-987f-277c1630f2ce}</Project>
+      <Name>DotNet4.5.2_Gako.Data.EntityBinder.NHibernateUtilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gako.Data.EntityBinder\DotNet4.5.2_Gako.Data.EntityBinder.csproj">
+      <Project>{4c8abf50-ee31-4a47-b3b8-7f00433d71e7}</Project>
+      <Name>DotNet4.5.2_Gako.Data.EntityBinder</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>このプロジェクトは、このコンピューター上にない NuGet パッケージを参照しています。それらのパッケージをダウンロードするには、[NuGet パッケージの復元] を使用します。詳細については、http://go.microsoft.com/fwlink/?LinkID=322105 を参照してください。見つからないファイルは {0} です。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.12.0\build\NUnit.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
